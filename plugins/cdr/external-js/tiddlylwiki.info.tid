@@ -1,0 +1,49 @@
+title: $:/plugins/cdr/external-js/tiddlywiki.info
+
+Here is a sample tiddlywiki.inifo that provides external-js related build targets.
+
+```
+{
+	"description":
+		"external-js client/server edition",
+	"plugins": [
+		"tiddlywiki/tiddlyweb",
+		"tiddlywiki/filesystem",
+		"tiddlywiki/highlight",
+		"cdr/external-js"
+	],
+	"themes": [
+		"tiddlywiki/vanilla",
+		"tiddlywiki/snowwhite"
+	],
+	"build": {
+		"listen": [
+			"--listen",
+            "root-tiddler=$:/core/save/all-external-js",
+            "use-browser-cache=yes"],
+		"index": [
+			"--rendertiddler",
+            "$:/core/save/offline-external-js",
+            "index.html",
+            "text/plain",
+			"--render",
+            "$:/core/templates/tiddlywiki5.js",
+            "[[tiddlywikicore-]addsuffix<version>addsuffix[.js]]",
+            "text/plain"],
+		"core": [
+			"--render",
+            "$:/core/templates/tiddlywiki5.js",
+            "[[tiddlywikicore-]addsuffix<version>addsuffix[.js]]",
+            "text/plain"]
+	}
+}
+```
+
+`--build listen`<br/>
+Start the server with external-js enabled. The server listens on port 8080. Visit http://localhost:8080 in your browser.
+
+`--build index`<br/>
+Build snapshot and tiddlywikicore.js. The results are saved in the `output` subdirectory of your wiki folder.
+
+`--build core`<br/>
+Build tiddlywikicore.js only.

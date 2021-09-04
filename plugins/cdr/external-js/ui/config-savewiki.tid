@@ -1,0 +1,8 @@
+title: $:/plugins/cdr/external-js/ui/config-savewiki
+
+\whitespace trim
+
+<$button>
+<$action-setfield $tiddler="$:/config/SaveWikiButton/Template" text="$:/core/save/offline-external-js"/>
+external-js
+</$button>

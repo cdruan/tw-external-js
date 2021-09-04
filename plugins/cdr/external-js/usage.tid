@@ -1,0 +1,37 @@
+title: $:/plugins/cdr/external-js/usage
+
+! Converting Standalone ~TiddlyWiki
+
+# Make a backup copy of your wiki in case something goes wrong
+
+# If you don't have `tiddlywikicore-5.x.x.js` matching your wiki version, press the following button to get a copy. Save the ~JavaScipt in the same location as your .html file.{{$:/plugins/cdr/external-js/ui/export-tiddlywikicore}}
+
+# Be certain the following modules are //piggybacked// in your tiddlywikicore ~JavaScript. <ul><$list filter="[enlist{$:/plugins/cdr/external-js/piggyback}] -[[$:/plugins/cdr/external-js]]" emptyMessage="<li>(none)</li>"><li><$view field="name"/></li></$list></ul>If you don't know or want to modify this list, repeat step #2.
+
+# Press {{$:/plugins/cdr/external-js/ui/config-savewiki}} to switch the template. It will change the content of $:/config/SaveWikiButton/Template to:<pre>`$:/core/save/offline-external-js`</pre>
+
+# Save your wiki (or snapshot).
+
+! Upgrading external-js Wiki <span style="font-size:0.65em">(experimental)</span>
+
+# Backup your standalone wiki.
+
+# Follow the normal [[Upgrade Instruction|https://tiddlywiki.com/#Upgrading]], but ''uncheck the tiddler ~$:/config/SaveWikiButton/Template''. Your wiki will be converted to a full standalone HTML.
+
+# Open this plugin from your upgraded wiki. 
+
+# Follow the instructions described in the section above.
+
+
+! ~TiddlyWiki on Node.js
+
+The external-js configuration can be activated by setting the `root-tiddler` parameter to `$:/core/save/all-external-js`. Here's an example:
+
+```
+tiddlywiki ./MyWiki --listen 'root-tiddler=$:/core/save/all-external-js' use-browser-cache=yes
+```
+
+''Note:'' In Windows OS, Command Prompt users need to replace the single quotes `'` with the double quotes `"`. 
+
+When external-js is activated, the snapshots are saved with the external-js template. Therefore, you must have the core ~JavaScript accompanying your offline wiki. Click on the "cloud" button and choose ''Save ~TiddlyWiki core for offline use'' to download the core.
+

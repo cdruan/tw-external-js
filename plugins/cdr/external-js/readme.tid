@@ -1,0 +1,4 @@
+title: $:/plugins/cdr/external-js/readme
+
+This plugin enables your wiki to load ~TiddlyWiki's core code from a separate file for improved efficiency. For standalone wikis, this process is destructive&mdash;i.e. it will remove the core code from your wiki&mdash;and you will need a copy of `tiddlywikicore-5.x.x.js` for your wiki to load successfully. Due to this additional complexity, this plugin is intended for advanced users only.
+
