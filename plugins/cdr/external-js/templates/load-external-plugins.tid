@@ -1,0 +1,8 @@
+title: $:/plugins/cdr/external-js/templates/load-external-plugins
+tags: $:/tags/RawMarkupWikified/ExternalJS
+
+\whitespace trim
+<!-- load external plugins -->
+<$list filter="[{$:/info/node}match[yes]] ~[{$:/config/ExternalJS/EnableExternalPlugins}match[yes]]">
+  `<script src="`{{{ [subfilter<pluginsURL>] }}}`" onerror="alert('Error: Cannot load `{{{ [subfilter<pluginsURL>] }}}`');"></script>`
+</$list>

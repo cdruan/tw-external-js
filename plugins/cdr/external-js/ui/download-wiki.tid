@@ -1,0 +1,17 @@
+title: $:/plugins/cdr/external-js/ui/download-wiki
+footer: <$button message="tm-close-tiddler">Close</$button>
+subtitle: Download Wiki
+
+\import $:/plugins/cdr/external-js/filenames
+
+You are downloading a wiki with its <$text text="TiddllyWiki"/> core externalized. Make sure you have the following supporting file(s). Save them in the same location as the downloaded wiki.
+
+{{$:/plugins/cdr/external-js/ui/get-tiddlywiki-core}}
+
+<$reveal type="match" state="$:/config/ExternalJS/EnableExternalPlugins" text="yes">
+{{$:/plugins/cdr/external-js/ui/get-external-plugins}}
+</$reveal>
+
+<div style="font-size:1.3em;margin-top:1.5em;">
+Download <a class="tc-tiddlylink" href=<<dataURL>> download=<<filename>>>this wiki</a>.
+</div>

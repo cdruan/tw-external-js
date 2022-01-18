@@ -1,0 +1,44 @@
+title: $:/plugins/cdr/external-js/ui/select-external-plugins
+
+\import [[$:/plugins/cdr/external-js/filenames]]
+
+\define addToExport()
+<$action-listops $tiddler="$:/temp/external-js/exports" $field="list" $subfilter="""[[$(currentTiddler)$]]""" />
+<$action-setfield $tiddler="$:/temp/external-js/exports" $field="original" $value="no"/>
+\end
+
+\define removeFromExport()
+<$action-listops $tiddler="$:/temp/external-js/exports" $field="list" $subfilter="""-[[$(currentTiddler)$]]""" />
+<$action-setfield $tiddler="$:/temp/external-js/exports" $field="original" $value="no"/>
+\end
+
+<div>
+<p>
+<$button>
+<$list filter="""[!has[draft.of]plugin-type[plugin]] -[[$:/core]] -[[$:/plugins/tiddlywiki/tiddlyweb]] -[[$:/plugins/tiddlywiki/filesystem]] [!has[draft.of]plugin-type[theme]]""">
+<$action-setfield $tiddler="$:/temp/external-js/exports" $index=<<currentTiddler>> $value="yes"/>
+<$action-listops $tiddler="$:/temp/external-js/exports" $field="list" $subfilter="""[<currentTiddler>]""" />
+</$list>
+<$action-setfield $tiddler="$:/temp/external-js/exports" $field="original" $value="no"/>
+Select All
+</$button>
+</p>
+<$list filter="""[!has[draft.of]plugin-type[plugin]sort[]] -[[$:/core]] -[[$:/plugins/tiddlywiki/tiddlyweb]] -[[$:/plugins/tiddlywiki/filesystem]]""">
+<$checkbox tiddler="$:/temp/external-js/exports" index=<<currentTiddler>> checked="yes" unchecked="no" default="no" checkactions=<<addToExport>> uncheckactions=<<removeFromExport>> > <$view field="name"/></$checkbox><br/>
+</$list>
+<$list filter="""[!has[draft.of]plugin-type[theme]sort[]]""">
+<$checkbox tiddler="$:/temp/external-js/exports" index=<<currentTiddler>> checked="yes" unchecked="no" default="no" checkactions=<<addToExport>> uncheckactions=<<removeFromExport>> > <$view field="name"/> (theme)</$checkbox><br/>
+</$list>
+<p>
+<$button class="tc-btn-download" disabled={{{[{$:/temp/external-js/exports!!original}match[no]] ~[[yes]]}}}>
+<$action-listops $tiddler="$:/config/ExternalJS/Exports" $field="text" $filter="""[enlist{$:/temp/external-js/exports!!list}]"""/>
+<$action-setfield $tiddler="$:/temp/external-js/exports" $field="original" $value="yes"/>
+Confirm Changes
+</$button>
+</p>
+<p>Download the file below. You need to redownload whenever you make changes to the list of plugins that you want to externalize.</p>
+<p>
+{{$:/plugins/cdr/external-js/ui/get-external-plugins}}
+</p>
+Save the file in the same location as your wiki.
+</div>

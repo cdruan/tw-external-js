@@ -1,0 +1,14 @@
+title: $:/plugins/cdr/external-js/templates/plugins-all.js
+
+`/* 
+This file contains all of the plugins and themes to be included in the wiki.
+*/
+window.$tw = (function ($tw) {
+    "use strict";
+    $tw = $tw || Object.create(null);
+    $tw.preloadTiddlers = $tw.preloadTiddlers || [];
+    $tw.preloadTiddlers = $tw.preloadTiddlers.concat(`
+<$text text=<<jsontiddlers "[plugin-type[plugin]] [plugin-type[theme]] -[[$:/core]]" "2">>/>`);
+    return $tw;
+})(window.$tw);
+`

@@ -1,0 +1,5 @@
+title: $:/config/ExternalJS/
+
+EnableExternalPlugins: no
+Prefix/Core: tiddlywikicore
+Prefix/Plugins: myplugins

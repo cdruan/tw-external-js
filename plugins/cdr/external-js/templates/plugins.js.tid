@@ -1,0 +1,15 @@
+title: $:/plugins/cdr/external-js/templates/plugins.js
+
+`/* 
+This file contains a customized selection of TiddlyWiki plugin modules
+for external plugin enabled wikis.
+*/
+window.$tw = (function ($tw) {
+    "use strict";
+    $tw = $tw || Object.create(null);
+    $tw.preloadTiddlers = $tw.preloadTiddlers || [];
+    $tw.preloadTiddlers = $tw.preloadTiddlers.concat(`
+<$text text=<<jsontiddlers "[[$:/config/ExternalJS/Exports]] [enlist{$:/config/ExternalJS/Exports}]" "2">>/>`);
+    return $tw;
+})(window.$tw);
+`

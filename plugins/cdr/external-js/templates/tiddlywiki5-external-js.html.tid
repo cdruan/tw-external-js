@@ -42,7 +42,8 @@ title: $:/core/templates/tiddlywiki5-external-js.html
 {{$:/core/templates/store.area.template.html}}
 <!--~~ Raw markup for the bottom of the body section ~~-->
 {{{ [all[shadows+tiddlers]tag[$:/tags/RawMarkupWikified/BottomBody]] ||$:/core/templates/raw-static-tiddler}}}
-</body>
 <!--~~ Load external JS ~~-->
-<script src="{{{ [<coreURL>] }}}" onerror="alert('Error: Cannot load {{{ [<coreURL>] }}}');"></script>
+{{{ [all[shadows+tiddlers]tag[$:/tags/RawMarkupWikified/ExternalJS]] ||$:/core/templates/raw-static-tiddler}}}
+<script src="{{{ [subfilter<coreURL>] }}}" onerror="alert('Error: Cannot load {{{ [subfilter<coreURL>] }}}');"></script>
+</body>
 </html>

@@ -1,13 +1,13 @@
 title: $:/core/templates/tiddlywiki5.js/tiddlers
 
 `
-$tw.preloadTiddlerArray(`<$text text=<<jsontiddlers "[[$:/core]] [enlist{$:/plugins/cdr/external-js/piggyback}] [[$:/plugins/cdr/external-js/piggyback]]">>/>`);
-$tw.preloadTiddlerArray([{
+$tw.preloadTiddlerArray(`<$text text=<<jsontiddlers "[[$:/core]]">>/>`);
+$tw.preloadTiddler({
 	title: "$:/config/SaveWikiButton/Template",
 	text: "$:/core/save/offline-external-js"
-},
-{
+});
+`<$list filter="[<version>compare:version:lt[5.2.0]]">`$tw.preloadTiddler({
 	title: "$:/core/save/all",
 	text: "{{$:/core/save/offline-external-js}}"
-}]);
-`
+});
+`</$list>

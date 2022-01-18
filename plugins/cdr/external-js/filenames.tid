@@ -1,0 +1,4 @@
+title: $:/plugins/cdr/external-js/filenames
+
+\define coreURL() [{$:/config/ExternalJS/Prefix/Core}addsuffix[-]addsuffix<version>addsuffix[.js]]
+\define pluginsURL() [{$:/config/ExternalJS/Prefix/Plugins}addsuffix[-]addsuffix<version>addsuffix[.js]]

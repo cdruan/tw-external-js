@@ -1,9 +1,11 @@
 title: $:/plugins/cdr/external-js/tiddlywiki.info
 
-Here is a sample tiddlywiki.inifo that provides external-js related build targets.
+\import [[$:/plugins/cdr/external-js/filenames]]
 
-```
-{
+<$set name=coreFilenamePrefix filter="[subfilter<coreURL>splitbefore[-]]">
+<$set name=pluginsFilenamePrefix filter="[subfilter<pluginsURL>splitbefore[-]]">
+Here is a sample tiddlywiki.inifo that provides external-js related build targets.
+<pre>{
 	"description":
 		"external-js client/server edition",
 	"plugins": [
@@ -18,32 +20,38 @@ Here is a sample tiddlywiki.inifo that provides external-js related build target
 	],
 	"build": {
 		"listen": [
-			"--listen",
-            "root-tiddler=$:/core/save/all-external-js",
-            "use-browser-cache=yes"],
+			"&#45;&#45;listen",
+			"root-tiddler=<$text text="""$:/core/save/all-external-js"""/>",
+			"use-browser-cache=yes"],
 		"index": [
-			"--rendertiddler",
-            "$:/core/save/offline-external-js",
-            "index.html",
-            "text/plain",
-			"--render",
-            "$:/core/templates/tiddlywiki5.js",
-            "[[tiddlywikicore-]addsuffix<version>addsuffix[.js]]",
-            "text/plain"],
+			"&#45;&#45;rendertiddler",
+			"<$text text="""$:/core/save/offline-external-js"""/>",
+			"index.html",
+			"text/plain",
+			"&#45;&#45;render",
+			"<$text text="""$:/core/templates/tiddlywiki5.js"""/>",
+			"&#91;&#91;<<coreFilenamePrefix>>]addsuffix&lt;version>addsuffix[.js]]",
+			"text/plain",
+			"&#45;&#45;render",
+			"<$text text="""$:/plugins/cdr/external-js/templates/plugins.js"""/>",
+			"&#91;&#91;<<pluginsFilenamePrefix>>]addsuffix&lt;version>addsuffix[.js]]",
+			"text/plain"
+		],
 		"core": [
-			"--render",
-            "$:/core/templates/tiddlywiki5.js",
-            "[[tiddlywikicore-]addsuffix<version>addsuffix[.js]]",
-            "text/plain"]
+			"&#45;&#45;render",
+			"<$text text="""$:/core/templates/tiddlywiki5.js"""/>",
+			&#91;&#91;<<coreFilenamePrefix>>]addsuffix&lt;version>addsuffix[.js]]",
+			"text/plain"]
 	}
 }
-```
+</pre>
+</$set></$set>
 
 `--build listen`<br/>
 Start the server with external-js enabled. The server listens on port 8080. Visit http://localhost:8080 in your browser.
 
 `--build index`<br/>
-Build snapshot and tiddlywikicore.js. The results are saved in the `output` subdirectory of your wiki folder.
+Build snapshot and <$text text="TiddlyWiki"/> core code. The results are saved in the `output` subdirectory of your wiki folder.
 
 `--build core`<br/>
-Build tiddlywikicore.js only.
+Build <$text text="TiddlyWiki"/> core code only.

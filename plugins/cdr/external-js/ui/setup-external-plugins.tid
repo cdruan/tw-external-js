@@ -1,0 +1,24 @@
+title: $:/plugins/cdr/external-js/ui/setup-external-plugins
+
+\define clearExportList()
+<$list filter="[{$:/config/ExternalJS/Exports}then[yes]]" variable="ignored">
+<$action-setfield $tiddler="$:/config/ExternalJS/Exports" $field="backup" $value={{$:/config/ExternalJS/Exports}} />
+</$list>
+<$action-setfield $tiddler="$:/config/ExternalJS/Exports" $field="text" $value=""/>
+\end
+
+\define restoreExportList()
+<$action-setfield $tiddler="$:/config/ExternalJS/Exports" $field="text" $value={{{ [[$:/config/ExternalJS/Exports]get[backup]] }}} />
+<$action-deletefield $tiddler="$:/config/ExternalJS/Exports" $field="backup" />
+\end
+
+<$checkbox tiddler="$:/config/ExternalJS/EnableExternalPlugins" field="text" checked="yes" unchecked="no" default="no" uncheckactions=<<clearExportList>> checkactions=<<restoreExportList>> >
+Externalize plugins and themes
+</$checkbox>
+<p>
+<$reveal type="match" state="$:/config/ExternalJS/EnableExternalPlugins" text="yes">
+Select modules you'd like to load externally:
+
+{{$:/plugins/cdr/external-js/ui/select-external-plugins}}
+</$reveal>
+</p>

@@ -1,0 +1,12 @@
+title: $:/plugins/tiddlywiki/tiddlyweb/syncer-actions/save-snapshot
+tags: $:/tags/SyncerDropdown
+
+<$wikify name="site-title" text={{$:/config/SaveWikiButton/Filename}}>
+<$button class="tc-btn-invisible">
+<$list filter="[{$:/config/SaveWikiButton/Template}match[$:/core/save/offline-external-js]]" emptyMessage="""<$action-sendmessage $message="tm-download-file" $param={{$:/config/SaveWikiButton/Template}} filename=<<site-title>>/>
+""" >
+<$action-sendmessage $message="tm-download-external-js-wiki" param=<<site-title>>/>
+</$list>
+{{$:/core/images/download-button}} Save snapshot for offline use <$view tiddler="$:/plugins/tiddlywiki/tiddlyweb/syncer-actions/save-snapshot" field="remark" format="plainwikified" mode="inline"/>
+</$button>
+</$wikify>
