@@ -11,10 +11,36 @@
         "tiddlywiki/snowwhite"
     ],
     "build": {
+        "listen": [
+            "--listen",
+            "port=8080",
+            "root-tiddler=$:/core/save/all-external-js",
+            "use-browser-cache=yes"
+        ],
         "index": [
             "--rendertiddler",
-            "$:/plugins/tiddlywiki/tiddlyweb/save/offline",
+            "$:/core/save/offline-external-js",
             "index.html",
+            "text/plain",
+            "--render",
+            "$:/core/templates/tiddlywiki5.js",
+            "[[tiddlywikicore-]addsuffix<version>addsuffix[.js]]",
+            "text/plain",
+            "--render",
+            "$:/plugins/cdr/external-js/templates/plugins.js",
+            "[[myplugins-]addsuffix<version>addsuffix[.js]]",
+            "text/plain"
+        ],
+        "core": [
+            "--render",
+            "$:/core/templates/tiddlywiki5.js",
+            "[[tiddlywikicore-]addsuffix<version>addsuffix[.js]]",
+            "text/plain"            
+        ],
+        "myplugins": [
+            "--render",
+            "$:/plugins/cdr/external-js/templates/plugins.js",
+            "[[myplugins-]addsuffix<version>addsuffix[.js]]",
             "text/plain"
         ],
         "static": [

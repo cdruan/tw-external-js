@@ -6,7 +6,7 @@ Just select or de-select any plugins. Confirm the changes and re-download the <$
 
 ''How do I merge plugins from different wikis into one collection?''
 
-If you plan to share the external <$text text="JavaScript"/> files with several wikis&mdash;assuming you have already converted one wiki&mdash;then alter the steps slightly for the remaining wikis:
+If you plan to share the external <$text text="JavaScript"/> files with several wikis&mdash;assuming you have already converted one wiki&mdash;then alter the steps slightly for each of the remaining wikis:
 
 * Import this plugin.
 * Check the "Externalize plugins and themes" option but skip the rest of step #3; i.e. leave the items unchecked and do not download the external plugins at this point. 

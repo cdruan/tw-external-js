@@ -2,4 +2,8 @@ title: $:/plugins/cdr/external-js/readme
 
 \import [[$:/plugins/cdr/external-js/filenames]]
 
-This plugin adds the ability to externalize plugins as well as the <$text text="TiddlyWiki"/> core code for improved efficiency. This is achieved by saving a wiki with the "external-js" template. Such configuration requires additional supporting file(s) to accompany the standalone wikis. This plugin is intended for advanced users only.
+This plugin adds the ability to externalize plugins as well as the <$text text="TiddlyWiki"/> core code for improved efficiency. This is achieved by applying the "external-js" template to the wiki. Such configuration requires additional supporting file(s) to accompany the standalone wikis. This plugin is intended for the advanced users only.
+
+! Installation
+
+Drag and drop the [[External JS Plugin|$:/plugins/cdr/external-js]] into your wiki, save and reload. Then visit the usage tab of the plugin for further details.

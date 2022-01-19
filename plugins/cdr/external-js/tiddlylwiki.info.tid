@@ -6,43 +6,48 @@ title: $:/plugins/cdr/external-js/tiddlywiki.info
 <$set name=pluginsFilenamePrefix filter="[subfilter<pluginsURL>splitbefore[-]]">
 Here is a sample tiddlywiki.inifo that provides external-js related build targets.
 <pre>{
-	"description":
-		"external-js client/server edition",
-	"plugins": [
-		"tiddlywiki/tiddlyweb",
-		"tiddlywiki/filesystem",
-		"tiddlywiki/highlight",
-		"cdr/external-js"
-	],
-	"themes": [
-		"tiddlywiki/vanilla",
-		"tiddlywiki/snowwhite"
-	],
-	"build": {
-		"listen": [
-			"&#45;&#45;listen",
-			"root-tiddler=<$text text="""$:/core/save/all-external-js"""/>",
-			"use-browser-cache=yes"],
-		"index": [
-			"&#45;&#45;rendertiddler",
-			"<$text text="""$:/core/save/offline-external-js"""/>",
-			"index.html",
-			"text/plain",
-			"&#45;&#45;render",
-			"<$text text="""$:/core/templates/tiddlywiki5.js"""/>",
-			"&#91;&#91;<<coreFilenamePrefix>>]addsuffix&lt;version>addsuffix[.js]]",
-			"text/plain",
-			"&#45;&#45;render",
-			"<$text text="""$:/plugins/cdr/external-js/templates/plugins.js"""/>",
-			"&#91;&#91;<<pluginsFilenamePrefix>>]addsuffix&lt;version>addsuffix[.js]]",
-			"text/plain"
-		],
-		"core": [
-			"&#45;&#45;render",
-			"<$text text="""$:/core/templates/tiddlywiki5.js"""/>",
-			&#91;&#91;<<coreFilenamePrefix>>]addsuffix&lt;version>addsuffix[.js]]",
-			"text/plain"]
-	}
+  "description":
+    "external-js client/server edition",
+  "plugins": [
+    "tiddlywiki/tiddlyweb",
+    "tiddlywiki/filesystem",
+    "tiddlywiki/highlight",
+    "cdr/external-js"
+  ],
+  "themes": [
+    "tiddlywiki/vanilla",
+    "tiddlywiki/snowwhite"
+  ],
+  "build": {
+    "listen": [
+      "&#45;&#45;listen",
+      "port=8080",
+      "root-tiddler=<$text text="""$:/core/save/all-external-js"""/>",
+      "use-browser-cache=yes"],
+    "index": [
+      "&#45;&#45;rendertiddler",
+      "<$text text="""$:/core/save/offline-external-js"""/>",
+      "index.html",
+      "text/plain",
+      "&#45;&#45;render",
+      "<$text text="""$:/core/templates/tiddlywiki5.js"""/>",
+      "&#91;&#91;<<coreFilenamePrefix>>]addsuffix&lt;version>addsuffix[.js]]",
+      "text/plain",
+      "&#45;&#45;render",
+      "<$text text="""$:/plugins/cdr/external-js/templates/plugins.js"""/>",
+      "&#91;&#91;<<pluginsFilenamePrefix>>]addsuffix&lt;version>addsuffix[.js]]",
+      "text/plain"],
+    "core": [
+      "&#45;&#45;render",
+      "<$text text="""$:/core/templates/tiddlywiki5.js"""/>",
+      &#91;&#91;<<coreFilenamePrefix>>]addsuffix&lt;version>addsuffix[.js]]",
+      "text/plain"],
+    "myplugins": [
+      "&#45;&#45;render",
+      "<$text text="""$:/plugins/cdr/external-js/templates/plugins.js"""/>",
+      "&#91;&#91;<<pluginsFilenamePrefix>>]addsuffix&lt;version>addsuffix[.js]]",
+      "text/plain"]
+  }
 }
 </pre>
 </$set></$set>
@@ -55,3 +60,6 @@ Build snapshot and <$text text="TiddlyWiki"/> core code. The results are saved i
 
 `--build core`<br/>
 Build <$text text="TiddlyWiki"/> core code only.
+
+`--build myplugins`<br/>
+Export externalized plugins.

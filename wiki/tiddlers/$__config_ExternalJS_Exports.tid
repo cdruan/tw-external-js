@@ -1,0 +1,6 @@
+created: 20220119002526490
+modified: 20220119002534078
+title: $:/config/ExternalJS/Exports
+type: text/vnd.tiddlywiki
+
+$:/plugins/tiddlywiki/highlight $:/plugins/cdr/external-js $:/themes/tiddlywiki/vanilla $:/themes/tiddlywiki/snowwhite
