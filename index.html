@@ -1,0 +1,191 @@
+<!doctype html>
+<!-- The following comment is called a MOTW comment and is necessary for the TiddlyIE Internet Explorer extension -->
+<!-- saved from url=(0021)https://tiddlywiki.com -->
+<html lang="en-GB">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<!--~~ Raw markup for the top of the head section ~~-->
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+<meta name="application-name" content="TiddlyWiki" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.2.1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no" />
+<meta name="copyright" content="TiddlyWiki created by Jeremy Ruston, (jeremy [at] jermolene [dot] com)
+
+Copyright (c) 2004-2007, Jeremy Ruston
+Copyright (c) 2007-2021, UnaMesa Association
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+* Redistributions of source code must retain the above copyright notice, this
+  list of conditions and the following disclaimer.
+
+* Redistributions in binary form must reproduce the above copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+
+* Neither the name of the copyright holder nor the names of its
+  contributors may be used to endorse or promote products derived from
+  this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 'AS IS'
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<title>External JS
+
+— externalize TiddlyWiki core and plugins
+</title>
+<!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~--><!--~~ Raw markup ~~-->
+
+
+</head>
+<body class="tc-body">
+<!--~~ Raw markup for the top of the body section ~~-->
+
+<!--~~ Static styles ~~-->
+<div id="styleArea">
+<style data-tiddler-title="$:/boot/boot.css" data-tiddler-type="text/css" data-tiddler-revision="0" data-tiddler-bag="default" type="text/css">/*
+Basic styles used before we boot up the parsing engine
+*/
+
+/*
+Error message and password prompt
+*/
+
+.tc-error-form {
+	font-family: sans-serif;
+	color: #fff;
+	z-index: 20000;
+	position: fixed;
+	background-color: rgb(255, 75, 75);
+	border: 8px solid rgb(255, 0, 0);
+	border-radius: 8px;
+	width: 50%;
+	margin-left: 25%;
+	margin-top: 4em;
+	padding: 0 2em 1em 2em;
+}
+
+.tc-error-form h1 {
+	text-align: center;
+}
+
+.tc-error-prompt {
+	text-align: center;
+	color: #000;
+}
+
+.tc-error-message {
+	overflow: auto;
+	max-height: 40em;
+	padding-right: 1em;
+	margin: 1em 0;
+	white-space: pre-line;
+}
+
+.tc-password-wrapper {
+    font-family: sans-serif;
+	z-index: 20000;
+	position: fixed;
+	text-align: center;
+	width: 200px;
+	top: 4em;
+	left: 50%;
+	margin-left: -144px; /* - width/2 - paddingHorz/2 - border */
+	padding: 16px 16px 16px 16px;
+	border-radius: 8px;
+}
+
+.tc-password-wrapper {
+	color: #000;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	background-color: rgb(197, 235, 183);
+	border: 8px solid rgb(164, 197, 152);
+}
+
+.tc-password-wrapper form {
+	text-align: left;
+}
+
+.tc-password-wrapper h1 {
+	font-size: 16px;
+	line-height: 20px;
+	padding-bottom: 16px;
+}
+
+.tc-password-wrapper input {
+	width: 100%;
+}
+</style>
+</div>
+<!--~~ Static content for Google and browsers without JavaScript ~~-->
+<noscript>
+<div id="splashArea">
+
+
+<p>This <a class="tc-tiddlylink-external" href="https://tiddlywiki.com" rel="noopener noreferrer" target="_blank">TiddlyWiki</a> contains the following tiddlers:</p><p><ul>
+
+<li>$:/config/ExternalJS/EnableExternalPlugins</li>
+
+<li>$:/isEncrypted</li>
+
+<li>$:/SiteSubtitle</li>
+
+<li>$:/SiteTitle</li>
+
+<li>$:/status/RequireReloadDueToPluginChange</li>
+
+<li>$:/StoryList</li>
+
+<li>GettingStarted</li>
+
+</ul>
+</p>
+
+
+
+<style>
+.tc-remove-when-wiki-loaded {display: none;}
+</style>
+
+</div>
+</noscript>
+<!--~~ Ordinary tiddlers ~~-->
+<script class="tiddlywiki-tiddler-store" type="application/json">[
+
+{"title":"$:/config/ExternalJS/EnableExternalPlugins","created":"20220119002526480","modified":"20220119002526480","type":"text/vnd.tiddlywiki","text":"yes","revision":"0","bag":"default"},
+
+{"title":"$:/isEncrypted","text":"no","revision":"0","bag":"default"},
+
+{"title":"$:/SiteSubtitle","created":"20220119005227990","modified":"20220119005828420","type":"text/vnd.tiddlywiki","text":"externalize \u003C$text text=\"TiddlyWiki\"/> core and plugins","revision":"0","bag":"default"},
+
+{"title":"$:/SiteTitle","created":"20220119005209651","modified":"20220119005509116","type":"text/vnd.tiddlywiki","text":"External JS","revision":"0","bag":"default"},
+
+{"title":"$:/status/RequireReloadDueToPluginChange","text":"no","revision":"0","bag":"default"},
+
+{"title":"$:/StoryList","text":"","list":"GettingStarted","revision":"1","bag":"default"},
+
+{"title":"GettingStarted","created":"20220119021412186","modified":"20220119023941669","tags":"","type":"text/vnd.tiddlywiki","text":"{{$:/plugins/cdr/external-js||$:/core/ui/ViewTemplate/body/plugin}}\n","revision":"0","bag":"default"}
+]</script><div id="storeArea" style="display:none;"></div>
+<!--~~ Raw markup for the bottom of the body section ~~-->
+
+<!--~~ Load external JS ~~-->
+<script src="myplugins-5.2.1.js" onerror="alert('Error: Cannot load myplugins-5.2.1.js');"></script>
+<script src="tiddlywikicore-5.2.1.js" onerror="alert('Error: Cannot load tiddlywikicore-5.2.1.js');"></script>
+</body>
+</html>
