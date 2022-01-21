@@ -4,7 +4,6 @@ title: $:/core/save/all-external-js
 \define saveTiddlerFilter()
 [is[tiddler]] -[prefix[$:/state/popup/]] -[prefix[$:/temp/]] -[prefix[$:/HistoryList]] -[status[pending]plugin-type[import]] -[[$:/core]] -[[$:/boot/boot.css]] -[type[application/javascript]library[yes]] -[[$:/boot/boot.js]] -[[$:/boot/bootprefix.js]] -[plugin-type[plugin]] -[plugin-type[theme]] +[sort[title]] $(publishFilter)$
 \end
-\define useExternalJS() yes
 \define saveOffline() no
 \define coreURL() [[%24%3A%2Fcore%2Ftemplates%2Ftiddlywiki5.js]]
 \define pluginsURL() [[%24%3A%2Fplugins%2Fcdr%2Fexternal-js%2Ftemplates%2Fplugins-all.js]]

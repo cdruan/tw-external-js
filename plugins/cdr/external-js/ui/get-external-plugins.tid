@@ -2,7 +2,6 @@ title: $:/plugins/cdr/external-js/ui/get-external-plugins
 
 <$wikify name="filename" text={{{[subfilter<pluginsURL>]}}}>
 <$button class="tc-btn-invisible tc-tiddlylink">
-<$action-listops $tiddler="$:/config/ExternalJS/Exports" $field="text" $filter="""[enlist{$:/temp/external-js/exports!!list}]"""/>
 <$action-sendmessage $message="tm-download-file" $param="$:/plugins/cdr/external-js/templates/plugins.js" filename=<<filename>>/>
 {{$:/core/images/download-button}} <<filename>>
 </$button>
