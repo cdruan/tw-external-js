@@ -1,6 +1,6 @@
 title: $:/plugins/cdr/external-js/ui/get-tiddlywiki-core
 
-<$wikify name="filename" text={{{[subfilter<coreURL>]}}}>
+<$set name="filename" value={{{[subfilter<coreURL>]}}}>
 <$list filter="[[$:/boot/boot.js]!is[missing]]">
 	<$button class="tc-btn-invisible tc-tiddlylink">
 	<$action-sendmessage $message="tm-download-file" $param="$:/core/templates/tiddlywiki5.js" filename=<<filename>>/>
@@ -19,4 +19,4 @@ title: $:/plugins/cdr/external-js/ui/get-tiddlywiki-core
 	</button>
 	</$list>
 </$list>
-</$wikify>
+</$set>

@@ -1,8 +1,8 @@
 title: $:/plugins/cdr/external-js/ui/get-external-plugins
 
-<$wikify name="filename" text={{{[subfilter<pluginsURL>]}}}>
+<$set name="filename" value={{{[subfilter<pluginsURL>]}}}>
 <$button class="tc-btn-invisible tc-tiddlylink">
 <$action-sendmessage $message="tm-download-file" $param="$:/plugins/cdr/external-js/templates/plugins.js" filename=<<filename>>/>
 {{$:/core/images/download-button}} <<filename>>
 </$button>
-</$wikify>
+</$set>
