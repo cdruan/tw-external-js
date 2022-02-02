@@ -23,10 +23,10 @@ title: $:/plugins/cdr/external-js/ui/select-external-plugins
 Select All
 </$button>
 </p>
-<$list filter="""[!has[draft.of]plugin-type[plugin]sort[]] -[[$:/core]] -[[$:/plugins/tiddlywiki/tiddlyweb]] -[[$:/plugins/tiddlywiki/filesystem]]""">
+<$list filter="""[!has[draft.of]plugin-type[plugin]sort[name]] -[[$:/core]] -[[$:/plugins/tiddlywiki/tiddlyweb]] -[[$:/plugins/tiddlywiki/filesystem]]""">
 <$checkbox tiddler="$:/temp/external-js/exports" index=<<currentTiddler>> checked="yes" unchecked="no" default="no" checkactions=<<addToExport>> uncheckactions=<<removeFromExport>> > <$view field="name"/></$checkbox><br/>
 </$list>
-<$list filter="""[!has[draft.of]plugin-type[theme]sort[]]""">
+<$list filter="""[!has[draft.of]plugin-type[theme]sort[name]]""">
 <$checkbox tiddler="$:/temp/external-js/exports" index=<<currentTiddler>> checked="yes" unchecked="no" default="no" checkactions=<<addToExport>> uncheckactions=<<removeFromExport>> > <$view field="name"/> (theme)</$checkbox><br/>
 </$list>
 <p>

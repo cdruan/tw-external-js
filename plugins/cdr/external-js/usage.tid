@@ -17,7 +17,7 @@ To use the external-js template for your standalone wiki:
 <li style="margin-bottom:0.5em">
 Make sure your version of <code><$text text={{$:/config/ExternalJS/Prefix/Plugins}}/>.js</code> contains the following modules. These modules will be removed from your .html file once the externalization is complete. 
 <ul>
-<$list filter="[enlist{$:/config/ExternalJS/Exports}plugin-type[plugin]sort[]] [enlist{$:/config/ExternalJS/Exports}plugin-type[theme]sort[]]" emptyMessage="<li>(none)</li>">
+<$list filter="[enlist{$:/config/ExternalJS/Exports}plugin-type[plugin]sort[name]] [enlist{$:/config/ExternalJS/Exports}plugin-type[theme]sort[name]]" emptyMessage="<li>(none)</li>">
 <li><$view field="name"/></li>
 </$list>
 </ul>
