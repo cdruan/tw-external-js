@@ -31,14 +31,23 @@ Select All
 </$list>
 <p>
 <$button class="tc-btn-download" disabled={{{[{$:/temp/external-js/exports!!original}match[no]] ~[[yes]]}}}>
-<$action-listops $tiddler="$:/config/ExternalJS/Exports" $field="text" $filter="""[enlist{$:/temp/external-js/exports!!list}]"""/>
+<$action-listops $tiddler="$:/config/ExternalJS/Exports" $field="text" $filter="""[enlist{$:/temp/external-js/exports!!list}!is[missing]]"""/>
 <$action-setfield $tiddler="$:/temp/external-js/exports" $field="original" $value="yes"/>
 Confirm Changes
 </$button>
 </p>
-<p>Download the file below. You need to redownload whenever you make changes to the list of plugins that you want to externalize.</p>
+<p>Make sure the following list agrees with your selections above. (Have you forgotten to press "Confirm Changes"?)</p>
+<p>
+Modules to be removed from your .html file:
+<ul>
+<$list filter="[enlist{$:/config/ExternalJS/Exports}plugin-type[plugin]sort[name]] [enlist{$:/config/ExternalJS/Exports}plugin-type[theme]sort[name]]" emptyMessage="<li>(none)</li>">
+<li><$view field="name"/></li>
+</$list>
+</ul>
+</p>
+<p>Download your plugins library. You need to re-download whenever the content of the library has changed.</p>
 <p>
 {{$:/plugins/cdr/external-js/ui/get-external-plugins}}
 </p>
-Save the file in the same location as your wiki.
+Save this file in the same location as your wiki.
 </div>
