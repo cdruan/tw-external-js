@@ -2,48 +2,46 @@ title: $:/plugins/cdr/external-js/usage
 
 \import [[$:/plugins/cdr/external-js/filenames]]
 
-! <a id="#use-external-js">Using external-js for Standalone Wikis</a>
+! <a id="#use-external-js">Using external-js for standalone wikis</a>
 
-To use the external-js template for your standalone wiki:
+To move <$text text="TiddlyWiki"/> core and any plugins out of your standalone wiki:
 
 <ol>
 <li style="margin-bottom:0.5em">Make a backup copy of your wiki in case something goes wrong.</li>
 
 <li>If you don't have <code><$text text={{{[subfilter<coreURL>]}}}/></code>, click on the following link to get a copy. Save it in the same location as your .html file. <p>{{$:/plugins/cdr/external-js/ui/get-tiddlywiki-core}}</p></li>
 
-<li style="margin-bottom:0.5em">{{$:/plugins/cdr/external-js/ui/setup-external-plugins}}</li>
+<li>{{$:/plugins/cdr/external-js/ui/setup-external-plugins}}</li>
 
-<$reveal type="match" state="$:/config/ExternalJS/EnableExternalPlugins" text="yes">
-<li style="margin-bottom:0.5em">
-Make sure your version of <code><$text text={{$:/config/ExternalJS/Prefix/Plugins}}/>.js</code> contains the following modules. These modules will be removed from your .html file once the externalization is complete. 
-<ul>
-<$list filter="[enlist{$:/config/ExternalJS/Exports}plugin-type[plugin]sort[name]] [enlist{$:/config/ExternalJS/Exports}plugin-type[theme]sort[name]]" emptyMessage="<li>(none)</li>">
-<li><$view field="name"/></li>
-</$list>
-</ul>
-If you are not sure or want to modify this list, repeat step #3.
-</li>
-</$reveal>
-
-<li style="margin-bottom:0.5em">
-Press {{$:/plugins/cdr/external-js/ui/setup-savewiki}} to initiate the conversion. This will assign `$:/core/save/offline-external-js` to the tiddler ''<$text text="$:/config/SaveWikiButton/Template"/>''.
-<p>Current value of $:/config/SaveWikiButton/Template:
+<li>
+Press {{$:/plugins/cdr/external-js/ui/setup-savewiki}} to switch to the external-js saving template.
+<p>Verify the displayed value of $:/config/SaveWikiButton/Template is<br>`$:/core/save/offline-external-js`:
 <pre style="margin-top:0.5px"><$view tiddler="$:/config/SaveWikiButton/Template" format="text"/></pre></p>
 </li>
 
 <li>Save your wiki.</li>
 </ol>
 
-! Upgrading external-js Wikis <span style="font-size:0.65em">(experimental)</span>
+! Converting back to full wiki
+
+Follow these steps to convert your wiki back to the standard single-file wiki:
 
 <ol>
-<li style="margin-bottom:0.5em"> Backup your standalone wiki.</li>
+<li>Backup your wiki.</li>
 
-<li style="margin-bottom:0.5em"> Uncheck the ''Externalize plugins and themes'' option and then save the wiki.</li>
+<li><p>Uncheck the ''Externalize plugins and themes'' option and then save the wiki.</p></li>
 
-<li style="margin-bottom:0.5em"> Proceed with the [[standalone wiki upgrade process|https://tiddlywiki.com/#Upgrading]].<p> ''IMPORTANT: uncheck the tiddler <code><$text text="$:/config/SaveWikiButton/Template"/></code>'' before you click the "Upgrade" button.</p>Your wiki will be converted to full standalone HTML.</li>
+<li><p>Proceed with the [[standalone wiki upgrade process|https://tiddlywiki.com/#Upgrading]]&mdash;make sure you de-select the tiddler <code><$text text="$:/config/SaveWikiButton/Template"/></code> on the review page.</p><p>Your wiki will be converted to the full standalone HTML, having the same <$text text=TiddlyWiki/> version number as the upgrader you use.</p></li>
+</ol>
 
-<li style="margin-bottom:0.5em"> From your upgraded wiki, visit the ''usage'' tab of this plugin. Repeat the tasks outlined in <a class="tc-tiddlylink" href="##use-external-js"><strong>Using external-js for Standalone Wikis</strong></a>.</li>
+! Upgrading your external-js wiki
+
+<ol>
+<li>You need to first convert your wiki back to the standard single-file form (see above).</li>
+
+<li><p>Then, from your upgraded wiki, repeat the tasks outlined in <a class="tc-tiddlylink" href="##use-external-js"><strong>Using external-js for Standalone Wikis</strong></a>.</p></li>
+
+<li><p>Once you have successfully upgraded JS file(s), you can update other wikis that load the same JS libraries by searching and replacing all instances of the version string in the .html files via a text editor. But this shortcut only works if your .html files do not contain any un-externalized //official// plugins and themes.</p></li>
 </ol>
 
 ! <$text text="TiddlyWiki"/> on Node.js

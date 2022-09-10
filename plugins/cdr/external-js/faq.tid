@@ -4,19 +4,21 @@ title: $:/plugins/cdr/external-js/FAQ
 
 Just select or de-select any plugins. Confirm the changes and re-download the <$text text="JavaScript"/> file. Reload your wiki.
 
-''How do I merge plugins from different wikis into one collection?''
+''How do I export plugins from multiple wikis into one collection?''
 
-If you plan to share the external <$text text="JavaScript"/> files with several wikis&mdash;assuming you have already converted one wiki&mdash;then alter the steps slightly for each of the remaining wikis:
+Assuming you have already converted one wiki and exported out the desired plugins from that wiki, alter the conversion steps slightly for each of the remaining wikis:
 
 * Import this plugin.
-* Check the "Externalize plugins and themes" option but skip the rest of step #3; i.e. leave the items unchecked and do not download the external plugins at this point. 
-* Continue with the remaining steps.
-* Once you reload the converted wiki, plugins that have already been externalized from the earlier wikis will be checked.
-* If you add additional plugins to the collection, remember to:
+* Check the "Externalize plugins and themes" option but skip the rest of step #3; i.e. leave all items unchecked and do not download the external plugins at this point. 
+* Proceed to step #4 and finish all of the remaining steps.
+* Once you reload the converted wiki, plugins that have already been externalized from the earlier wikis will appear in this wiki.
+* Now is the time to add additional plugins to the collection; just remember to:
 	** confirm the changes
-	** re-download the JS file
+	** re-create the JS file by downloading the JS file to the local disk
 	** save the wiki.
 
-''How do I convert my wiki back to the standard single-file version?''
+TIP: You might want to externalize all official plugins to make upgrading multiple wikis easier in the future.
 
-The ''Upgrading external-js Wikis'' section contains the steps you would need to do to recover the full standalone version.
+''Can I name the plugins library to something else?''
+
+Yes. Open the tiddler $:/config/ExternalJS/Prefix/Plugins and assign a new base name for your plugins library. Do this before you convert the wiki.
