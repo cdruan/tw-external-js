@@ -3,7 +3,7 @@
 	"name": "External JS",
 	"description": "Ability to externalize core and plugins",
 	"author": "cdruan",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"core-version": ">=5.1.23",
 	"list": "readme usage tiddlywiki.info FAQ"
 }
