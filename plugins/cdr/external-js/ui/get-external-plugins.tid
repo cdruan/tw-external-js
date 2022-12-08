@@ -1,6 +1,6 @@
 title: $:/plugins/cdr/external-js/ui/get-external-plugins
 
-<$set name="filename" value={{{[subfilter<pluginsURL>]}}}>
+<$set name="filename" value={{{[subfilter<pluginsURL>split[/]last[]]}}}>
 <$button class="tc-btn-invisible tc-tiddlylink">
 <$action-sendmessage $message="tm-download-file" $param="$:/plugins/cdr/external-js/templates/plugins.js" filename=<<filename>>/>
 {{$:/core/images/download-button}} <<filename>>

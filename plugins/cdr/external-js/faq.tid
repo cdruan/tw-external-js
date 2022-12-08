@@ -19,6 +19,16 @@ Assuming you have already converted one wiki and exported out the desired plugin
 
 TIP: You might want to externalize all official plugins to make upgrading multiple wikis easier in the future.
 
-''Can I name the plugins library to something else?''
+''Can I configure the paths to the libraries?''
 
-Yes. Open the tiddler $:/config/ExternalJS/Prefix/Plugins and assign a new base name for your plugins library. Do this before you convert the wiki.
+Yes. To change the path to the core library, edit the $:/config/ExternalJS/Prefix/Core tiddler. For example, if the URL of your core library is `https://example.com/lib/tiddlywikicore-5.2.3.js`, then set the value of the tiddler to:
+
+```
+https://example.com/lib/tiddlywikicore
+```
+
+Omit the version number and the file extension.
+
+Similarly, to change the path to the plugins library (or rename the <$text text="JavaScript"/> file), edit the $:/config/ExternalJS/Prefix/Plugins tiddler.
+
+Make the changes before you convert the wiki, and make sure that the libraries can be found at the specified locations.

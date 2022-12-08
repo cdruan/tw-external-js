@@ -9,7 +9,7 @@ To move <$text text="TiddlyWiki"/> core and any plugins out of your standalone w
 <ol>
 <li style="margin-bottom:0.5em">Make a backup copy of your wiki in case something goes wrong.</li>
 
-<li>If you don't have <code><$text text={{{[subfilter<coreURL>]}}}/></code>, click on the following link to get a copy. Save it in the same location as your .html file. <p>{{$:/plugins/cdr/external-js/ui/get-tiddlywiki-core}}</p></li>
+<li>If you don't have <code><$text text={{{[subfilter<coreURL>split[/]last[]]}}}/></code>, click on the following link to get a copy. Save it in the same location as your .html file. <p>{{$:/plugins/cdr/external-js/ui/get-tiddlywiki-core}}</p></li>
 
 <li>{{$:/plugins/cdr/external-js/ui/setup-external-plugins}}</li>
 

@@ -2,8 +2,8 @@ title: $:/plugins/cdr/external-js/tiddlywiki.info
 
 \import [[$:/plugins/cdr/external-js/filenames]]
 
-<$set name=coreFilenamePrefix filter="[subfilter<coreURL>splitbefore[-]]">
-<$set name=pluginsFilenamePrefix filter="[subfilter<pluginsURL>splitbefore[-]]">
+<$set name=coreFilenamePrefix filter="[subfilter<coreURL>split[/]last[]splitbefore[-]]">
+<$set name=pluginsFilenamePrefix filter="[subfilter<pluginsURL>split[/]last[]splitbefore[-]]">
 Here is a sample tiddlywiki.inifo that provides external-js related build targets.
 <pre>{
   "description":
