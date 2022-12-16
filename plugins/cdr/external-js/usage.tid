@@ -24,26 +24,27 @@ Press {{$:/plugins/cdr/external-js/ui/setup-savewiki}} to switch to the external
 
 ! Converting back to full wiki
 
-Follow these steps to convert your wiki back to the standard single-file wiki:
+Click the following button to download the fully standalone version of this wiki:
+<ul style="list-style:none">
+<li>
+<$let tid="$:/plugins/cdr/external-js/ui/download-full-wiki" tv-config-toolbar-icons="yes" tv-config-toolbar-text="yes" tv-config-toolbar-class="">
+<div class={{{ [<tid>encodeuricomponent[]addprefix[tc-btn-]] }}}>
+<$transclude tiddler=<<tid>>/>&nbsp;&nbsp;<i><$transclude tiddler=<<tid>> field="description"/></i>
+</div>
+</$let>
+</li></ul>
 
-<ol>
-<li>Backup your wiki.</li>
-
-<li><p>Uncheck the ''Externalize plugins and themes'' option and then save the wiki.</p></li>
-
-<li><p>Proceed with the [[standalone wiki upgrade process|https://tiddlywiki.com/#Upgrading]]&mdash;make sure you de-select the tiddler <code><$text text="$:/config/SaveWikiButton/Template"/></code> on the review page.</p><p>Your wiki will be converted to the full standalone HTML, having the same <$text text=TiddlyWiki/> version number as the upgrader you use.</p></li>
-</ol>
+You can also find this button on the ''Tools'' tab in the sidebar.
 
 ! Upgrading your external-js wiki
 
 <ol>
-<li>You need to first convert your wiki back to the standard single-file form (see above).</li>
-
-<li><p>Then, from your upgraded wiki, repeat the tasks outlined in <a class="tc-tiddlylink" href="##use-external-js"><strong>Using external-js for Standalone Wikis</strong></a>.</p></li>
-
-<li><p>Once you have successfully upgraded JS file(s), you can update other wikis that load the same JS libraries by searching and replacing all instances of the version string in the .html files via a text editor. But this shortcut only works if your .html files do not contain any un-externalized //official// plugins and themes.</p></li>
+<li>Convert your wiki back to the fully standalone version first (see above).</li>
+<li>Then, proceed with the [[standalone wiki upgrade|https://tiddlywiki.com/#Upgrading]] process.</li>
+<li>Repeat the <a class="tc-tiddlylink" href="##use-external-js"><strong>external-js conversion</strong></a> steps.</li>
+<li>You can upgrade any remaining wikis that load the same libraries by manually editing all instances of the version string in the HTML files&mdash;provided that these wikis do not internally store any //official// plugins and themes. At the minimum, replace version numbers in the `<meta name="tiddlywiki-version">` tag and in the `<script>` tags at the end of the file.</li>
 </ol>
 
 ! <$text text="TiddlyWiki"/> on Node.js
 
-If you are running <$text text="TiddlyWiki"/> on Node.js and the content of the tiddler $:/config/SaveWikiButton/Template is set to `$:/core/save/offline-external-js`, then the snapshots you save for offline use will utilize the external-js template. Refer to <a class="tc-tiddlylink" href="##use-external-js"><strong>Using external-js for Standalone Wikis</strong></a> section to obtain additional required files.
+If you are running <$text text="TiddlyWiki"/> on Node.js and the content of the tiddler $:/config/SaveWikiButton/Template is set to `$:/core/save/offline-external-js`, then the snapshots you save for offline use will utilize the external-js template.

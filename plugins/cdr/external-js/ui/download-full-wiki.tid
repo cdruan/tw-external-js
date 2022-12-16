@@ -1,0 +1,22 @@
+title: $:/plugins/cdr/external-js/ui/download-full-wiki
+tags: $:/tags/PageControls
+caption: {{$:/plugins/cdr/external-js/images/file-download}} {{$:/plugins/cdr/external-js/ui/download-full-wiki!!caption}}
+description: {{$:/plugins/cdr/external-js/ui/download-full-wiki!!hint}}
+caption: single-file wiki
+hint: Download fully standalone wiki
+list-before: $:/core/ui/Buttons/save-wiki
+
+\whitespace trim
+
+<$wikify name="site-title" text={{$:/config/SaveWikiButton/Filename}}>
+<$let publishFilter="""-[[$:/config/SaveWikiButton/Template]] -[[$:/plugins/tiddlywiki/filesystem]] -[[$:/plugins/tiddlywiki/tiddlyweb]] -[[$:/config/ExternalJS/EnableExternalPlugins]] -[[$:/config/ExternalJS/Prefix/Core]] -[[$:/config/ExternalJS/Prefix/Plugins]] -[[$:/config/PageControlButtons/Visibility/$:/plugins/cdr/external-js/ui/download-full-wiki]]""">
+<$button tooltip={{$:/plugins/cdr/external-js/ui/download-full-wiki!!hint}} aria-label={{$:/plugins/cdr/external-js/ui/download-full-wiki!!caption}} class=<<tv-config-toolbar-class>>>
+<$action-sendmessage $message="tm-download-file" $param="$:/core/save/all" publishFilter=<<publishFilter>> filename=<<site-title>>/>
+<$list filter="[<tv-config-toolbar-icons>match[yes]]">
+{{$:/plugins/cdr/external-js/images/file-download}}
+</$list>
+<$list filter="[<tv-config-toolbar-text>match[yes]]"><span class="tc-btn-text"><$text text={{$:/plugins/cdr/external-js/ui/download-full-wiki!!caption}}/></span>
+</$list>
+</$button>
+</$let>
+</$wikify>

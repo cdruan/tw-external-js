@@ -4,7 +4,7 @@ title: $:/plugins/cdr/external-js/ui/get-tiddlywiki-core
 <$list filter="[[$:/boot/boot.js]!is[missing]]">
 	<$button class="tc-btn-invisible tc-tiddlylink">
 	<$action-sendmessage $message="tm-download-file" $param="$:/core/templates/tiddlywiki5.js" filename=<<filename>>/>
-	{{$:/core/images/export-button}} <<filename>>
+	{{$:/core/images/download-button}} <<filename>>
 	</$button>
 </$list>
 <$list filter="[[$:/boot/boot.js]is[missing]]">
@@ -15,7 +15,7 @@ title: $:/plugins/cdr/external-js/ui/get-tiddlywiki-core
 	</$list>
 	<$list filter="[[$:/plugins/tiddlywiki/tiddlyweb]is[missing]]">
 	<button class="tc-btn-invisible">
-	<a class="tc-tiddlylink" href=<<filename>> download=<<filename>> target="_blank">{{$:/core/images/download-button}} <<filename>></a>&nbsp;&nbsp;//You may need to right-click the link and save it that way.//
+	<a class="tc-tiddlylink" href=<<filename>> download={{{ [subfilter<coreURL>] }}} target="_blank">{{$:/core/images/download-button}} <<filename>></a>&nbsp;&nbsp;//You may need to right-click the link and save it that way.//
 	</button>
 	</$list>
 </$list>

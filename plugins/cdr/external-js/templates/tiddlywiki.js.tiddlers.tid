@@ -1,7 +1,6 @@
 title: $:/core/templates/tiddlywiki5.js/tiddlers
 
-`
-$tw.preloadTiddlerArray(`<$text text=<<jsontiddlers "[[$:/core]]">>/>`);
+`$tw.preloadTiddlerArray(`<$text text=<<jsontiddlers "[[$:/core]]">>/>`);
 $tw.preloadTiddler({
 	title: "$:/config/SaveWikiButton/Template",
 	text: "$:/core/save/offline-external-js"
